@@ -13,9 +13,10 @@ export class UserPhotosListComponent implements OnInit {
 
   constructor(private photoService: PhotoService) { }
   photos: FirebaseListObservable <any[]> = null;
-  
+
   ngOnInit(){
     this.photos = this.photoService.getPhotos();
+    console.log(this.photos);
   }
   deletePhoto(selectedPhoto: Photo) {
     this.photoService.deletePhoto(selectedPhoto);
